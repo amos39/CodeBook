@@ -6,7 +6,7 @@
 
 作者：amos
 
-项目地址：
+项目地址：https://github.com/amos39/CodeBook
 
 作者blog：developing...
 
@@ -22,13 +22,13 @@
 
 ### 搜索
 
-![search](https://github.com/amos39/CodeBook/presource/search.png)
+![search](https://github.com/amos39/CodeBook/tree/main/presource/search.png)
 
 搜索范围包括除密码外的内容，您搜索的关键字可以在存储的所有数据中的网址，备注，用户名中
 
 ### 排序
 
-![sort](https://github.com/amos39/CodeBook/presource/sort.png)
+![sort](https://github.com/amos39/CodeBook/tree/main/presource/sort.png)
 
 展示或是搜索的内容会自动按照字典序进行排序
 
@@ -76,20 +76,20 @@
 
 ## 应用截图
 
-![](https://github.com/amos39/CodeBook/presource/show1.png)
+![](https://github.com/amos39/CodeBook/tree/main/presource/show1.png)
 
-![](https://github.com/amos39/CodeBook/presource/show2.png)
-
-
-
-![](https://github.com/amos39/CodeBook/presource/show3.png)
+![](https://github.com/amos39/CodeBook/tree/main/presource/show2.png)
 
 
 
+![](https://github.com/amos39/CodeBook/tree/main/presource/show3.png)
 
 
-![](https://github.com/amos39/CodeBook/presource/show4.png)
 
-![](https://github.com/amos39/CodeBook/presource/show5.png)
 
-![](https://github.com/amos39/CodeBook/presource/show6.png)
+
+![](https://github.com/amos39/CodeBook/tree/main/presource/show4.png)
+
+![](https://github.com/amos39/CodeBook/tree/main/presource/show5.png)
+
+![](https://github.com/amos39/CodeBook/tree/main/presource/show6.png)
