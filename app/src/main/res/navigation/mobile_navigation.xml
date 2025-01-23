@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/menu_home">
+
+    <fragment
+        android:id="@+id/menu_home"
+        android:name="com.amos.codebook3.ui.home.HomeFragment"
+        android:label="主页"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_add_data"
+            app:destination="@id/addDataFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <action
+            android:id="@+id/action_home_to_edit_data"
+            app:destination="@id/editDataFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_manage"
+        android:name="com.amos.codebook3.ui.manage.ManageFragment"
+        android:label="管理"
+        tools:layout="@layout/fragment_manage" />
+
+    <fragment
+        android:id="@+id/addDataFragment"
+        android:name="com.amos.codebook3.ui.edit.AddDataFragment"
+        android:label="新增"
+        tools:layout="@layout/fragment_add_data" />
+
+    <fragment
+        android:id="@+id/editDataFragment"
+        android:name="com.amos.codebook3.ui.edit.EditDataFragment"
+        android:label="编辑"
+        tools:layout="@layout/fragment_edit_data" />
+
+    <fragment
+        android:id="@+id/importFragment"
+        android:name="com.amos.codebook3.ui.import_export.ImportFragment"
+        android:label="导入"
+        tools:layout="@layout/fragment_import" />
+
+    <fragment
+        android:id="@+id/exportFragment"
+        android:name="com.amos.codebook3.ui.import_export.ExportFragment"
+        android:label="导出"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/navigation_change_key"
+        android:name="com.amos.codebook3.ui.manage.ChangeKeyFragment"
+        android:label="更改密钥"
+        tools:layout="@layout/fragment_change_key" />
+
+</navigation>

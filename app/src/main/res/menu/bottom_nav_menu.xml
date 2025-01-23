@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--导航栏菜单-->
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="主页" />
+    <item
+        android:id="@+id/menu_manage"
+        android:icon="@drawable/ic_manage"
+        android:title="管理" />
+
+</menu>

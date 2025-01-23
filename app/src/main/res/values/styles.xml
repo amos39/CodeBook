@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- res/values/styles.xml -->
+    <resources>
+<!--    自定义样式-->
+        <!--    自定义导航栏样式-->
+        <style name="CustomBottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+            <item name="itemTextAppearance">@style/CustomBottomNavigationTextStyle</item>
+        </style>
+
+        <style name="CustomBottomNavigationTextStyle" parent="TextAppearance.MaterialComponents.Caption">
+            <item name="android:layout_marginTop">0dp</item> <!-- Adjust this value to change the distance -->
+            <item name="android:layout_marginBottom">0dp</item>
+            <item name="android:layout_marginStart">0dp</item>
+            <item name="android:layout_marginEnd">0dp</item>
+        </style>
+
+        <!--搜索框样式-->
+    <style name="SearchEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">10</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:hint">搜索...</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/search_text</item>
+        <item name="android:textColorHint">@color/search_hint</item>
+        <item name="android:inputType">text</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+
+    <style name="SearchImageButton">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_weight">2</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:background">@android:color/transparent</item>
+    <item name="android:src">@drawable/ic_home_search</item>
+    <item name="android:contentDescription">Search</item>
+    </style>
+
+    </resources>
+

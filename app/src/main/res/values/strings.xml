@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">codebook</string>
+    <string name="title_home">aaa</string>
+    <string name="message_on_change_key">
+        修改密钥有可能产生致命错误，请一定做好备份（使用导出功能导出所有数据）
+        密钥更改成功后请重启软件
+    </string>
+    <string name="message_on_delete_key">
+        删除密钥后密钥将不会留存本地，数据库将无法访问，您需要输入密钥以重新访问数据库
+    </string>
+    <string name="message_on_input_key">
+        在你没有保存好当前密钥时，请不要使用此功能
+        当密钥没有留存本地时，你需要使用该功能输入正确密钥解锁数据库，
+        输入当前数据库错误的密钥会使数据库无法工作
+    </string>
+    <string name="message_on_reset_database">
+        清空密钥和数据库中的所有数据（不包括导出的备份文件），
+        重置后请重启软件
+    </string>
+
+
+
+</resources>

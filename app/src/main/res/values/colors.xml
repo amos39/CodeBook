@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="no_color">#00000000</color>
+
+    <color name="aliceblue">#F0F8FF</color>
+    <color name="antiquewhite">#FAEBD7</color>
+    <color name="aqua">#00FFFF</color>
+    <color name="aquamarine">#7FFFD4</color>
+    <color name="azure">#F0FFFF</color>
+    <color name="beige">#F5F5DC</color>
+    <color name="bisque">#FFE4C4</color>
+    <color name="blanchedalmond">#FFEBCD</color>
+    <color name="blue">#0000FF</color>
+    <color name="blueviolet">#8A2BE2</color>
+    <color name="brown">#A52A2A</color>
+    <color name="burlywood">#DEB887</color>
+    <color name="cadetblue">#5F9EA0</color>
+    <color name="chartreuse">#7FFF00</color>
+    <color name="chocolate">#D2691E</color>
+    <color name="coral">#FF7F50</color>
+    <color name="cornflowerblue">#6495ED</color>
+    <color name="cornsilk">#FFF8DC</color>
+    <color name="red">#DC143C</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="darkblue">#00008B</color>
+    <color name="darkcyan">#008B8B</color>
+    <color name="darkgoldenrod">#B8860B</color>
+    <color name="darkgray">#A9A9A9</color>
+    <color name="darkgreen">#006400</color>
+    <color name="darkkhaki">#BDB76B</color>
+    <color name="darkmagenta">#8B008B</color>
+    <color name="darkolivegreen">#556B2F</color>
+    <color name="darkorange">#FF8C00</color>
+    <color name="darkorchid">#9932CC</color>
+    <color name="darkred">#8B0000</color>
+    <color name="darksalmon">#E9967A</color>
+    <color name="darkseagreen">#8FBC8F</color>
+    <color name="darkslateblue">#483D8B</color>
+    <color name="darkslategray">#2F4F4F</color>
+    <color name="white2">#FFfafafa</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="main_blue">#007BFF</color>
+
+
+    <color name="search_background">#FFFFFF</color>
+    <color name="search_hint">#FF999999</color>
+    <color name="search_text">#FF000000</color>
+    <color name="logo_color">#FFEF99</color>
+
+
+
+</resources>
