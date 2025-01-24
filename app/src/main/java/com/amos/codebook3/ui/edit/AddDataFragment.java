@@ -107,15 +107,11 @@ public class AddDataFragment extends Fragment {
         } else {
 
            // Navigation.findNavController(requireView()).navigateUp();
-
         }
-
         //保存后会退出，无法显示snackbar
        // Snackbar.make(urlEdit, "保存成功", Snackbar.LENGTH_SHORT).show();
-
         //Navigation.findNavController(requireView()).navigateUp();
     }
-
     private void handleBackPress() {
         if (hasChanges) {
             new MaterialAlertDialogBuilder(requireContext())

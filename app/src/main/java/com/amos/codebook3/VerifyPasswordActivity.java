@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.amos.codebook3.MainActivity;
+import com.amos.codebook3.MyUtil.MyUtil;
 import com.amos.codebook3.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -56,7 +57,7 @@ public class VerifyPasswordActivity extends AppCompatActivity {
         }
 
         String storedHash = preferences.getString(KEY_PASSWORD_HASH, "");
-        String inputHash = hashPassword(inputPassword);
+        String inputHash = MyUtil.hashPassword(inputPassword);
 
         if (storedHash.equals(inputHash)) {
             startMainActivity();
@@ -72,20 +73,4 @@ public class VerifyPasswordActivity extends AppCompatActivity {
         finish();
     }
 
-    private String hashPassword(String password) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(password.getBytes());
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : hash) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
-            }
-            return hexString.toString();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return "";
-        }
-    }
 }

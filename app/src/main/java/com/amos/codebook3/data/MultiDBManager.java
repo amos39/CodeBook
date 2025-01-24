@@ -53,6 +53,7 @@ public class MultiDBManager {
             Log.e("DataBaseRenew", "cannot open oldDataBase");
             return 0;
         }
+        //关闭数据库无法更改密钥
 //        //关闭数据库
 //        try {
 //            if (db != null && db.isOpen()) {

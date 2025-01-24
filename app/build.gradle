@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.amos.codebook3"
-        minSdk 31
+        minSdk 30
         targetSdk 34
         versionCode 3
         versionName "3.0-RELEASE"

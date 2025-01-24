@@ -58,7 +58,7 @@
 
     <fragment
         android:id="@+id/navigation_change_key"
-        android:name="com.amos.codebook3.ui.manage.ChangeKeyFragment"
+        android:name="com.amos.codebook3.ui.manage.OperateKeyFragment"
         android:label="更改密钥"
         tools:layout="@layout/fragment_change_key" />
 

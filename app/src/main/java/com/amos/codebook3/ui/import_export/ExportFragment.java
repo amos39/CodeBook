@@ -28,6 +28,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+//导出界面
 public class ExportFragment extends Fragment {
 
     private ExportAdapter adapter;

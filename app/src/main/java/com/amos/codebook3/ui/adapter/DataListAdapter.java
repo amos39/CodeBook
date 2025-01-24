@@ -15,7 +15,7 @@ import com.amos.codebook3.domain.DataObject;
 import java.util.List;
 
 /**
- * RecyclerView 适配器，用于显示数据列表
+ * RecyclerView 适配器，用于显示主页的数据列表
  */
 public class DataListAdapter extends RecyclerView.Adapter<DataListAdapter.ViewHolder> {
     // 数据列表
