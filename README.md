@@ -2,7 +2,7 @@
 
 ## 介绍
 
-一款保存用户在特定网址的账号密码以及一些其他信息的密码管理工具，目前只提供保存在本地，该版本目前为测试版，使用中可能会出现bug
+一款保存用户各种网址的账号密码以及一些其他信息的密码管理工具，目前只提供本地存储功能
 
 作者：amos
 
@@ -18,7 +18,7 @@
 
 ### 存储
 
-保存用户名，密码，网址，备注，以及修改，删除功能
+保存用户名，密码，网址，备注，以及对其的修改，删除功能
 
 ### 搜索
 
@@ -40,7 +40,7 @@
 
 #### 导出
 
-从/storage/emulated/0/Android/data/com.amos.codebook3/files/backup下选择文件导出到应用数据库中，导入格式为特定的json
+从/storage/emulated/0/Android/data/com.amos.codebook3/files/backup下选择文件导出到应用数据库中，导出格式为特定的json
 
 ### 加密
 
@@ -56,9 +56,11 @@
 
 #### 密钥相关操作
 
+在进行密钥相关操作后都建议进行一次重启软件的操作
+
 ##### 更改密钥
 
-第一次启动时，密钥是随机生成的，建议您首次启动后使用该功能修改密钥，在以后的使用中如需更改密钥请做好数据备份，99%的情况下修改密钥不会破坏数据库，但依然存在1%的风险
+第一次启动时，密钥是随机生成的，建议您首次启动后先修改密钥再正式开始使用，在以后的使用中如需更改密钥请做好数据备份，更改密钥一般不会破环数据库，但仍存在极低概率有这种情况
 
 更改密钥时需要设备上存在旧的密钥
 
@@ -72,24 +74,22 @@
 
 ##### 重置数据库
 
-当您实在无法想起数据库密钥时，可以使用该功能删除数据库和密钥相关的内容，以重新使用软件，使用该功能后，所有的数据库中的数据会被删除但是备份文件不会被清理
+当您实在无法想起数据库密钥时，可以使用该功能删除数据库和密钥相关的内容，以重新使用软件，使用该功能后，所有的数据库中的数据会被删除，但是备份文件不会被清理，注意：卸载软件会清空所有数据，包括数据库中的数据和备份文件数据
 
 ## 应用截图
 
-![](presource/show1.png)
+<img src="presource/show1.png" style="zoom: 67%;" />
 
-![](presource/show2.png)
-
-
-
-![](presource/show3.png)
+<img src="presource/show2.png" style="zoom:67%;" />
 
 
 
+<img src="presource/show3.png" style="zoom:67%;" />
 
 
-![](presource/show4.png)
 
-![](presource/show5.png)
+<img src="presource/show4.png" style="zoom: 67%;" />
 
-![](presource/show6.png)
+<img src="presource/show5.png" style="zoom:67%;" />
+
+<img src="presource/show6.png" style="zoom:67%;" />
