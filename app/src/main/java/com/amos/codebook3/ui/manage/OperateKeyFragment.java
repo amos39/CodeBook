@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.amos.codebook3.R;
+import com.amos.codebook3.data.Code;
 import com.amos.codebook3.data.DataBaseService;
 import com.amos.codebook3.data.SPCollection;
 import com.google.android.material.button.MaterialButton;
@@ -235,17 +236,21 @@ public class OperateKeyFragment extends Fragment {
                 .setTitle("确认重置")
                 .setMessage("确定要重置数据库吗？")
                 .setPositiveButton("确定", (d, which) -> {
-                    SharedPreferences preferences= requireContext().getSharedPreferences(SPCollection.FN_DATABASE,Context.MODE_PRIVATE);
+                    SharedPreferences preferences = requireContext().getSharedPreferences(SPCollection.FN_DATABASE,Context.MODE_PRIVATE);
+//                    if(preferences.getInt(SPCollection.KN_DB_KEY_IS_SAVED,-1) == 1){
+//                        Toast.makeText(requireContext(),"无法在密钥存在时重置！！",Toast.LENGTH_SHORT).show();
+//                    }
                     //重置数据库
-                    String mes=DataBaseService.deleteDataBase(requireContext(),preferences.getString(SPCollection.KN_DB_NAME,null));
+                    String mes=DataBaseService.deleteAndResetDataBase(requireContext(),preferences.getString(SPCollection.KN_DB_NAME,null));
                     Toast.makeText(requireContext(),mes,Toast.LENGTH_SHORT).show();
                     //如果数据库删除失败则中止
-                    if(!mes.equals("删除陈功")) return;
-
-                    //删除共享参数
+                    if(!mes.equals(Code.STR_RESET_SUCCESS)) return;
+                    //重置有关共享参数
                     SharedPreferences.Editor editor= preferences.edit();
                     editor.clear();
                     editor.apply();
+                    loadDatabaseInfo();
+                    //Toast.makeText(requireContext(),"请重启软件",Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("取消", null)
                 .create();

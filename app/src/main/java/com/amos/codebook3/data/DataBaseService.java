@@ -2,14 +2,10 @@ package com.amos.codebook3.data;
 
 import android.content.Context;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.amos.codebook3.R;
 import com.amos.codebook3.domain.DataObject;
 import com.amos.codebook3.domain.Result;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -117,18 +113,27 @@ public class DataBaseService {
         }
     }
 
-    //删除数据库
-    public static String deleteDataBase(Context context,String databaseName){
-        File databaseFile = context.getDatabasePath(databaseName);
+    //删除数据库并创建一个空数据库
+    public synchronized static String deleteAndResetDataBase(Context context, String databaseName){
+        File databaseFile =null;
+        try{
+            databaseFile= context.getDatabasePath(databaseName);
+        }catch (Exception e){
+            e.printStackTrace();
+            return "数据库名错误";
+        }
+
         if(!databaseFile.exists()){
-            return "数据库不存在";
+
         }
         boolean result=MultiDBManager.deleteSpecificDatabase(context,databaseName);
         if(result){
-            return "删除成功";
+
+                return Code.STR_RESET_SUCCESS;
         }else{
-            return "删除失败";
+            return "重置失败";
         }
 
     }
+
 }

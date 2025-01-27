@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.amos.codebook3.R;
 import com.amos.codebook3.data.DataBaseService;
 import com.amos.codebook3.domain.DataObject;
+import com.amos.codebook3.domain.Result;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -32,7 +33,7 @@ import java.util.Locale;
 public class ExportFragment extends Fragment {
 
     private ExportAdapter adapter;
-    private List<DataObject> allData;
+    private List<DataObject> allData=null;
     private CheckBox checkboxSelectAll;
 
     @Nullable
@@ -60,10 +61,16 @@ public class ExportFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         // 获取所有数据
-        allData = DataBaseService.getAllData(requireContext()).data;
-        adapter = new ExportAdapter(allData);
-        recyclerView.setAdapter(adapter);
-
+//        allData = DataBaseService.getAllData(requireContext()).data;
+        Result<List<DataObject>> result= DataBaseService.getAllData(requireContext());
+        allData=result.data;
+        if(result.message!=null){
+            //发生错误则打印错误信息
+            Toast.makeText(requireContext(),result.message,Toast.LENGTH_SHORT).show();
+        }else{
+            adapter = new ExportAdapter(allData);
+            recyclerView.setAdapter(adapter);
+        }
         view.findViewById(R.id.btnExport).setOnClickListener(v -> exportSelectedData());
     }
 

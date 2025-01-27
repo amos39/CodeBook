@@ -95,6 +95,12 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(DATABASE_CREATE);
     }
 
+    //手动创建数据库
+    public void manualCreate(){
+        SQLiteDatabase WDB=getWriteDatabase();
+        this.onCreate(WDB);
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DATA);

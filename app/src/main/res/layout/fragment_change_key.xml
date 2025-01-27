@@ -192,6 +192,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
                 android:text="重置数据库"
                 android:textColor="@color/red"
                 android:background="@color/white" />
