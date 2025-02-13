@@ -1,5 +1,15 @@
-package com.amos.codebook3.data;
+/*
+   ______    ___   ______   ________  ______      ___      ___   ___  ____
+ .' ___  | .'   `.|_   _ `.|_   __  ||_   _ \   .'   `.  .'   `.|_  ||_  _|
+/ .'   \_|/  .-.  \ | | `. \ | |_ \_|  | |_) | /  .-.  \/  .-.  \ | |_/ /
+| |       | |   | | | |  | | |  _| _   |  __'. | |   | || |   | | |  __'.
+\ `.___.'\\  `-'  /_| |_.' /_| |__/ | _| |__) |\  `-'  /\  `-'  /_| |  \ \_
+ `.____ .' `.___.'|______.'|________||_______/  `.___.'  `.___.'|____||____|
 
+    https://github.com/amos39/CodeBook
+
+*/
+package com.amos.codebook3.data;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;

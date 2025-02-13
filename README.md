@@ -9,7 +9,6 @@
 项目地址：https://github.com/amos39/CodeBook
 
 作者blog：developing...
-
 ## 说明
 
 该软件至少运行在android 11系统上运行，推荐sdk版本为34（对应android 14）
