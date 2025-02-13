@@ -2,7 +2,7 @@
     <string name="app_name">codebook</string>
     <string name="title_home">aaa</string>
     <string name="message_on_change_key">
-        修改密钥有极小概率产生致命错误，请先做好备份（使用导出功能导出所有数据）
+        修改密钥前请先做好备份（使用导出功能导出所有数据）
         密钥更改成功后请重启软件
     </string>
     <string name="message_on_delete_key">

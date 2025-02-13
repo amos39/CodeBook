@@ -1,6 +1,8 @@
 package com.amos.codebook3.MyUtil;
 import android.content.Context;
 
+import com.amos.codebook3.domain.DataObject;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
@@ -44,8 +46,4 @@ public class MyUtil {
             return "";
         }
     }
-
-
-
-
 }

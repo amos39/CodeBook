@@ -13,6 +13,7 @@
 ## 说明
 
 该软件至少运行在android 11系统上运行，推荐sdk版本为34（对应android 14）
+卸载软件将删除所有数据，包括数据库中的数据和备份文件，如果需要您可以保存备份文件到其他目录（备份文件地址：/storage/emulated/0/Android/data/com.amos.codebook3/files/backup）
 
 ## 功能
 

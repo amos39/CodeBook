@@ -201,7 +201,7 @@ public class OperateKeyFragment extends Fragment {
     private void showConfirmDialogInput(String inputKey) {
         AlertDialog dialog = new AlertDialog.Builder(requireContext())
                 .setTitle("确认输入")
-                .setMessage("确定要输入密钥吗？")
+                .setMessage("确定要输入密钥吗？输入错误的密钥会产生错误！")
                 .setPositiveButton("确定", (d, which) -> {
                     //将获取的密钥写入共享参数文件中
                     SharedPreferences preferences=getContext().getSharedPreferences(SPCollection.FN_DATABASE,Context.MODE_PRIVATE);

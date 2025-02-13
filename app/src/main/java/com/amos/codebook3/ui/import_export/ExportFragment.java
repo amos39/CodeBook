@@ -70,8 +70,10 @@ public class ExportFragment extends Fragment {
         }else{
             adapter = new ExportAdapter(allData);
             recyclerView.setAdapter(adapter);
+            view.findViewById(R.id.btnExport).setOnClickListener(v -> exportSelectedData());
         }
-        view.findViewById(R.id.btnExport).setOnClickListener(v -> exportSelectedData());
+
+
     }
 
     private void exportSelectedData() {
@@ -91,7 +93,7 @@ public class ExportFragment extends Fragment {
             // 创建导出文件
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault())
                     .format(new Date());
-            File exportFile = new File(backupDir, "codebook_backup_" + timestamp + ".json");
+            File exportFile = new File(backupDir, "backup" + timestamp + ".json");
 
             // 使用Gson导出数据
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

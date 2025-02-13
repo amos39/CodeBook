@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class DataObject implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    public int id=-1;
+    public transient int id=-1;
     //网址
     public String url = null;
     //用户名
