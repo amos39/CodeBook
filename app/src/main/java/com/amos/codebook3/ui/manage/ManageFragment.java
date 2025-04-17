@@ -12,13 +12,12 @@
 package com.amos.codebook3.ui.manage;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,6 +27,7 @@ import androidx.navigation.Navigation;
 
 import com.amos.codebook3.MyUtil.MyUtil;
 import com.amos.codebook3.R;
+import com.amos.codebook3.ui.home.HomeFragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -50,7 +50,7 @@ public class ManageFragment extends Fragment {
     private SharedPreferences preferences;
 
     //打开浏览器进行远程连接
-    private MaterialButton btnConnectToServer;
+    //private MaterialButton btnConnectToServer;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,13 +67,13 @@ public class ManageFragment extends Fragment {
         // 初始化视图
         switchPassword = view.findViewById(R.id.switchPassword);
         btnOperateKey = view.findViewById(R.id.btnChangePassword);
-        btnConnectToServer=view.findViewById(R.id.connect_server);
+        //btnConnectToServer=view.findViewById(R.id.connect_server);
         
         // 设置密码开关状态
         boolean isPasswordEnabled = preferences.getBoolean(KEY_PASSWORD_ENABLED, false);
         switchPassword.setChecked(isPasswordEnabled);
         btnOperateKey.setVisibility(isPasswordEnabled ? View.VISIBLE : View.GONE);
-        
+
         // 监听开关变化
         switchPassword.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -107,17 +107,16 @@ public class ManageFragment extends Fragment {
             Navigation.findNavController(v).navigate(R.id.navigation_change_key)
         );
 
-
         //设置连接远程服务器访问键监听器
-        btnConnectToServer.setOnClickListener(v->{
-            // TODO
-//            // 创建一个包含 URL 的 Intent
-//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://xxx.com"));
-//            // 启动浏览器
-//            startActivity(intent);
-            Toast.makeText(requireContext(),"敬请期待...",Toast.LENGTH_SHORT).show();
-
-        });
+//        btnConnectToServer.setOnClickListener(v->{
+//            // TODO
+////            // 创建一个包含 URL 的 Intent
+////            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://xxx.com"));
+////            // 启动浏览器
+////            startActivity(intent);
+//            Toast.makeText(requireContext(),"敬请期待...",Toast.LENGTH_SHORT).show();
+//
+//        });
     }
 
 

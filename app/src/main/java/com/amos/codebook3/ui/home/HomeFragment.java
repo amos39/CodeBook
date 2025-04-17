@@ -1,5 +1,6 @@
 package com.amos.codebook3.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +17,14 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.amos.codebook3.MainActivity;
 import com.amos.codebook3.R;
 import com.amos.codebook3.data.DataBaseService;
 import com.amos.codebook3.domain.DataObject;
 import com.amos.codebook3.domain.Result;
 import com.amos.codebook3.ui.adapter.DataListAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
@@ -33,6 +37,30 @@ public class HomeFragment extends Fragment implements DataListAdapter.OnItemClic
     private EditText searchEdit;
     private Spinner sortSpinner;
     private String currentSortField = "url";
+    private FloatingActionButton addButton;
+
+    private OnFragmentInteractionListener mListener;
+    // 定义一个接口，用于回调
+    public interface OnFragmentInteractionListener {
+        void onScrollEvent(int scrollY); // 滑动事件的回调
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,10 +70,28 @@ public class HomeFragment extends Fragment implements DataListAdapter.OnItemClic
 
         // Setup RecyclerView
         RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
+        addButton = root.findViewById(R.id.fab_add);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new DataListAdapter(new ArrayList<>(), this);
         recyclerView.setAdapter(adapter);
 
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                //在 RecyclerView 的滑动监听器中触发回调,回调的值为dy
+                super.onScrolled(recyclerView,dx,dy);
+                if (mListener != null) {
+                    mListener.onScrollEvent(dy);
+                }
+                if (dy > 0 && addButton.getVisibility() == View.VISIBLE) {
+                    addButton.hide(); // 向下滑动时隐藏
+                } else if (dy <= 0 && addButton.getVisibility() != View.VISIBLE) {
+                    addButton.show(); // 向上滑动时显示
+                }
+            }
+        });
         // Setup search
         searchEdit = root.findViewById(R.id.edit_search);
         searchEdit.setOnEditorActionListener((v, actionId, event) -> {
@@ -78,13 +124,16 @@ public class HomeFragment extends Fragment implements DataListAdapter.OnItemClic
                 performSearch();
             }
 
+
+
             @Override
             public void onNothingSelected(android.widget.AdapterView<?> parent) {
             }
+
         });
 
         // Setup FAB
-        FloatingActionButton addButton = root.findViewById(R.id.fab_add);
+
         addButton.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_home_to_add_data);
         });
@@ -102,6 +151,7 @@ public class HomeFragment extends Fragment implements DataListAdapter.OnItemClic
 
         return root;
     }
+
 
     private void loadData() {
         Result<List<DataObject>> result=DataBaseService.getAllData(requireContext());
